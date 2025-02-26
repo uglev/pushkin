@@ -1,6 +1,7 @@
 ﻿local api = require("telegram-bot-lua.core").configure("enter your token here") -- Enter your token
 local json = require("dkjson")
 
+-- Working with the database
 local driver = require("luasql.sqlite3")
 local env = driver.sqlite3()
 local db = env:connect("db.sqlite")
@@ -20,12 +21,14 @@ cursor:close()
 db:close()
 env:close()
 
+-- Conversion for working with Russian lines
 function utf8_sub(s, i, j)
   i = utf8.offset(s, i)
   j = utf8.offset(s, j + 1) - 1
   return string.sub(s, i, j)
 end
 
+-- Working with a query
 function api.on_message(message)
   if message.text then
     if message.text:sub(1, 1) == "/" then
@@ -74,6 +77,7 @@ function api.on_message(message)
   end
 end
 
+-- Publish Result
 function api.on_callback_query(callback_query)
   local name = callback_query.data
   if name == "/start" then
