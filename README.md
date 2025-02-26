@@ -6,3 +6,5 @@
 
 Использование:
 Заполнить файл update.lua с вашими данными, указав имена файлов фотографий в папке img. Запустить скрипт update.lua, а затем bot.lua.
+
+![bot](https://github.com/user-attachments/assets/e372764a-1274-4753-8df9-a25e6c6128f6)
